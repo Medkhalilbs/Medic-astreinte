@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #2c3e50;
+}
+
+#doctor-input, #calendar, #doctor-points, #print-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#doctorList, #pointsList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#doctorList li, #pointsList li {
+    background-color: #ecf0f1;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#print-section select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#print-section button {
+    padding: 10px 20px;
+    background-color: #2ecc71;
+}
+
+#print-section button:hover {
+    background-color: #27ae60;
+}
+
+#calendarView {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.day {
+    background-color: #ffffff;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.day strong {
+    display: block;
+    margin-bottom: 10px;
+    color: #2980b9;
+}
+
+@media (max-width: 600px) {
+    input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    button, #print-section button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #print-section select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media print {
+    /* Hide all elements by default */
+    body * {
+        display: none;
+    }
+
+    /* Display only the targeted section and its children */
+    .printable, .printable * {
+        display: block;
+    }
+
+    /* Additional adjustments for better print layout */
+    body {
+        margin: 10mm !important; /* Add margins around the printed page */
+    }
+
+    /* Ensure tables or grid layouts are handled properly */
+    #calendarView {
+        width: 100%;
+    }
+
+    /* Ensure the table fits on one page */
+    @page {
+        margin: 10mm;
+    }
+
+    /* Optional: Adjust table layout to fit */
+    .printable table {
+        font-size: 10pt;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .printable th, .printable td {
+        border: 2px solid #4CAF50;
+        padding: 8px;
+        text-align: center;
+        font-size: 10pt;
+    }
+
+    .printable th {
+        background-color: #2E8B57;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    .printable td.weekend {
+        background-color: #DFF0D8;
+        color: #3C763D;
+    }
+
+    /* Add a footer for page numbers or additional information if needed */
+    .printable::after {
+        content: "Page " counter(page);
+        position: fixed;
+        bottom: 10mm;
+        right: 10mm;
+        font-size: 10pt;
+        color: #666;
+    }
+
+    .printable {
+        /* Styles specific to printable sections */
+    }
+}

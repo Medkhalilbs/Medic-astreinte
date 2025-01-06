@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion d'Astreintes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Gestion d'Astreintes pour les Médecins</h1>
+    <div id="doctor-input">
+        <h2>Ajouter des Médecins</h2>
+        <input type="text" id="doctorName" placeholder="Nom du médecin">
+        <button id="addDoctor">Ajouter</button>
+        <ul id="doctorList">
+            <!-- ...existing code... -->
+        </ul>
+        <button id="printDoctorsList">Imprimer la Liste des Médecins</button>
+    </div>
+    <div id="calendar">
+        <h2>Calendrier des Astreintes</h2>
+        <button id="generateCalendar">Générer le Calendrier</button>
+        <button id="printCalendar">Imprimer le Calendrier</button>
+        <div id="calendarView">
+            <!-- Calendar will be generated here -->
+        </div>
+    </div>
+    <div id="doctor-points">
+        <h2>Points des Médecins</h2>
+        <ul id="pointsList">
+            <!-- ...existing code... -->
+        </ul>
+        <button id="printPointsList">Imprimer les Points des Médecins</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
